@@ -145,7 +145,7 @@ public class BikeController : MonoBehaviour{
     
     	Vector3 setInitialTensor = GetComponent<Rigidbody>().inertiaTensor;//this string is necessary for Unity 5.3 with new PhysX feature when Tensor decoupled from center of mass
     	GetComponent<Rigidbody>().centerOfMass = new Vector3(CoM.localPosition.x, CoM.localPosition.y, CoM.localPosition.z);// now Center of Mass(CoM) is alligned to GameObject "CoM"
-    	GetComponent<Rigidbody>().inertiaTensor = setInitialTensor;////this string is necessary for Unity 5.3 with new PhysX feature when Tensor decoupled from center of mass
+    	//GetComponent<Rigidbody>().inertiaTensor = setInitialTensor;////this string is necessary for Unity 5.3 with new PhysX feature when Tensor decoupled from center of mass
 
         m_body = GetComponent<Rigidbody>();//seems strange, I know but three strings above strange too but necessary for PhysX ;( 
 
