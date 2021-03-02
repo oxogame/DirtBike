@@ -3351,7 +3351,7 @@ namespace AmplifyShaderEditor
 					if( m_cameraSpeed < 15 )
 						m_cameraSpeed += 0.2f;
 					UseCurrentEvent();
-					Input.GetKey(KeyCode.2)
+					//Input.GetKey(KeyCode.2)
 				}
 
 
