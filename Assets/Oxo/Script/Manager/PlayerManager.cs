@@ -9,13 +9,10 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject bike;
 
-    public GameObject mudPrefab;
-    public List<GameObject> mudList = new List<GameObject>();
-    public int mudSize;
+    public GameObject mudParticle;
+    public ParticleSystem mud;
 
-    public GameObject mudStartPosition;
-
-    public GameObject targetMudPosition;
+    bool isMouseDown;
 
     private void Awake()
     {
@@ -28,43 +25,53 @@ public class PlayerManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void Start()
+    float minAngle = -20f;
+    float angle;
+    void FixedUpdate()
     {
-        for (int i = 0; i < mudSize; i++)
+        if (Input.GetMouseButtonDown(0))
         {
-            GameObject go = Instantiate(mudPrefab);
-            mudList.Add(go);
+            isMouseDown = true;
         }
-    }
 
-    float minAngle = -10;
-    float counter;
-    void Update()
-    {
         if (Input.GetMouseButton(0))
         {
-            if (counter > minAngle)
+            if (angle > minAngle)
             {
-                counter -= 0.4f;
+                angle -= 0.5f;
+                bike.transform.eulerAngles = new Vector3(angle, 0f, 0f);
+
+                var emision = mud.emission;
+                emision.rateOverTime = Mathf.Abs(angle * 50);
             }
             else
             {
-                counter = minAngle;
+                bike.transform.eulerAngles = new Vector3(minAngle, 0f, 0f);
             }
-            //bike.transform.eulerAngles = new Vector3(counter, 0f, 0f);
 
-            if (counter < -5)
-            {
-                for (int i = 0; i < 10; i++)
-                {
-                    GameObject mud = mudList.Where(x => !x.activeSelf).FirstOrDefault();
-                    mud.transform.position = mudStartPosition.transform.position;
-                    Vector3 force = targetMudPosition.transform.position - mud.transform.position + Vector3.right * 0.1f * i + Vector3.left * 0.5f;
-                    mud.SetActive(true);
-                    mud.GetComponent<Rigidbody>().velocity = bike.GetComponent<Rigidbody>().velocity;
-                    mud.GetComponent<Rigidbody>().AddForce(force*20f + Vector3.up * 1200f);
-                }
-            }
+            //bike.GetComponent<BikeController>().EngineTorque = 350f;
+            //if (angle < minAngle / 2f)
+            //{
+            //    mudParticle.SetActive(true);
+            //}
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            isMouseDown = false;
+            // mudParticle.SetActive(false);
+            //bike.GetComponent<BikeController>().EngineTorque = 1800f;
+        }
+
+        if (!isMouseDown && angle < 0)
+        {
+            angle += 0.5f;
+        }
+
+        if (angle > minAngle / 3f)
+        {
+            var emision = mud.emission;
+            emision.rateOverTime = Mathf.Abs(0f);
+            //mudParticle.SetActive(false);
         }
     }
 }
