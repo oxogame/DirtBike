@@ -248,7 +248,7 @@ public class BikeController : MonoBehaviour
         //case for reverse
         if (PlayerManager.instance.isMouseDown/*!crashed && outsideControls.Vertical > 0 && isReverseOn*/)
         {
-            coll_rearWheel.motorTorque = EngineTorque * -PlayerManager.instance.speed/*outsideControls.Vertical*/ / 10 + (bikeSpeed * 50);//need to make reverse really slow
+            coll_rearWheel.motorTorque = EngineTorque * -PlayerManager.instance.speed/*outsideControls.Vertical*/ / 3 + (bikeSpeed * 20);//need to make reverse really slow
 
             // debug - rear wheel is green when accelerate
             meshRearWheel.GetComponent<Renderer>().material.color = Color.green;
