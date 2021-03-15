@@ -92,7 +92,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -0.46251988, z: 0.059999466}
+  m_ConnectedAnchor: {x: 0, y: -0.4625199, z: 0.05999756}
   m_UseSpring: 1
   m_Spring:
     spring: 500
@@ -2459,7 +2459,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0.42, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -0.026000023, z: 8.44}
+  m_ConnectedAnchor: {x: 0, y: -0.026000023, z: 8.440002}
   serializedVersion: 2
   m_Spring: 0.75
   m_Damper: 1
