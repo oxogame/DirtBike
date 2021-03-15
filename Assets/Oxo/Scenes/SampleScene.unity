@@ -558,11 +558,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1348412906369318562, guid: 09c430c655f85144d99b7e3dc5e4fc31, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.24
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1348412906369318562, guid: 09c430c655f85144d99b7e3dc5e4fc31, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.22
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1348412906688749075, guid: 09c430c655f85144d99b7e3dc5e4fc31, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1771,6 +1771,8 @@ MonoBehaviour:
   bike: {fileID: 1462621218}
   mudParticle: {fileID: 881037465}
   mud: {fileID: 1956076771}
+  speed: 0.8
+  isMouseDown: 0
   rockList: []
   emptySlot: {fileID: 1921045222}
 --- !u!1 &1335114853
@@ -7216,7 +7218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &815540787392472096
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -165,7 +165,7 @@ public class BikeController : MonoBehaviour
 
         // too keep EngineTorque variable like "real" horse powers
         EngineTorque = EngineTorque * 20;
-
+        Debug.Log("tork: " + EngineTorque);
         //*30 is for good braking to keep frontBrakePower = 100 for good brakes. So, 100 is like sportsbike's Brembo
         frontBrakePower = frontBrakePower * 30;//30 is abstract but necessary for Unity5
 
@@ -182,6 +182,7 @@ public class BikeController : MonoBehaviour
 
         if (!GameManager.instance.isGameRunning)
             return;
+
         // if RPM is more than engine can hold we should shift gear up
         EngineRPM = coll_rearWheel.rpm * GearRatio[CurrentGear];
         if (EngineRPM > EngineRedline)
@@ -228,7 +229,7 @@ public class BikeController : MonoBehaviour
         //////////////////////////////////// acceleration & brake /////////////////////////////////////////////////////////////
         //////////////////////////////////// ACCELERATE /////////////////////////////////////////////////////////////
 
-        if (GameManager.instance.isGameRunning && !PlayerManager.instance.isMouseDown/*!crashed && outsideControls.Vertical > 0 && !isReverseOn*/)
+        if (!PlayerManager.instance.isMouseDown/*!crashed && outsideControls.Vertical > 0 && !isReverseOn*/)
         {//case with acceleration from 0.0 to 0.9 throttle
             coll_frontWheel.brakeTorque = 0.0f;//we need that to fix strange unity bug when bike stucks if you press "accelerate" just after "brake".
             Debug.Log(coll_rearWheel.motorTorque);
@@ -245,7 +246,7 @@ public class BikeController : MonoBehaviour
             m_body.centerOfMass = new Vector3(CoM.localPosition.x, CoM.localPosition.y, CoM.localPosition.z);
         }
         //case for reverse
-        if (GameManager.instance.isGameRunning && PlayerManager.instance.isMouseDown/*!crashed && outsideControls.Vertical > 0 && isReverseOn*/)
+        if (PlayerManager.instance.isMouseDown/*!crashed && outsideControls.Vertical > 0 && isReverseOn*/)
         {
             coll_rearWheel.motorTorque = EngineTorque * -PlayerManager.instance.speed/*outsideControls.Vertical*/ / 10 + (bikeSpeed * 50);//need to make reverse really slow
 
