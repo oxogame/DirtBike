@@ -86,6 +86,9 @@ public class PlayerManager : MonoBehaviour
 
     void FillRock()
     {
+        if (rockList.Count == 0)
+            return;
+
         //emptySlot.transform.position = Vector3.Lerp(emptySlot.transform.position, new Vector3(emptySlot.transform.position.x, 0f, emptySlot.transform.position.z),0.02f);
         GameObject go = Instantiate(rockList.FirstOrDefault().gameObject);
         go.transform.position = bike.transform.forward * 25f;
