@@ -96,50 +96,50 @@ public class BikeController : MonoBehaviour
     ////////////////////////////////////////////////  ON SCREEN INFO ///////////////////////////////////////////////////////
     public void OnGUI()
     {
-        GUIStyle biggerText = new GUIStyle((GUIStyle)"label");
-        biggerText.fontSize = 40;
-        GUIStyle middleText = new GUIStyle((GUIStyle)"label");
-        middleText.fontSize = 22;
-        GUIStyle smallerText = new GUIStyle((GUIStyle)"label");
-        smallerText.fontSize = 14;
+        //    GUIStyle biggerText = new GUIStyle((GUIStyle)"label");
+        //    biggerText.fontSize = 40;
+        //    GUIStyle middleText = new GUIStyle((GUIStyle)"label");
+        //    middleText.fontSize = 22;
+        //    GUIStyle smallerText = new GUIStyle((GUIStyle)"label");
+        //    smallerText.fontSize = 14;
 
-        //to show in on display interface: speed, gear, ESP status
-        GUI.color = UnityEngine.Color.black;
-        GUI.Label(new Rect(Screen.width * 0.875f, Screen.height * 0.9f, 120.0f, 80.0f), String.Format("" + "{0:0.}", bikeSpeed), biggerText);
-        GUI.Label(new Rect(Screen.width * 0.76f, Screen.height * 0.88f, 60.0f, 80.0f), "" + (CurrentGear + 1), biggerText);
-        if (!ESP)
-        {
-            GUI.color = UnityEngine.Color.grey;
-            GUI.Label(new Rect(Screen.width * 0.885f, Screen.height * 0.86f, 60.0f, 40.0f), "ESP", middleText);
-        }
-        else
-        {
-            GUI.color = UnityEngine.Color.green;
-            GUI.Label(new Rect(Screen.width * 0.885f, Screen.height * 0.86f, 60.0f, 40.0f), "ESP", middleText);
-        }
-        if (!isReverseOn)
-        {
-            GUI.color = UnityEngine.Color.grey;
-            GUI.Label(new Rect(Screen.width * 0.885f, Screen.height * 0.96f, 60.0f, 40.0f), "REAR", smallerText);
-        }
-        else
-        {
-            GUI.color = UnityEngine.Color.red;
-            GUI.Label(new Rect(Screen.width * 0.885f, Screen.height * 0.96f, 60.0f, 40.0f), "REAR", smallerText);
-        }
+        //    //to show in on display interface: speed, gear, ESP status
+        //    GUI.color = UnityEngine.Color.black;
+        //    GUI.Label(new Rect(Screen.width * 0.875f, Screen.height * 0.9f, 120.0f, 80.0f), String.Format("" + "{0:0.}", bikeSpeed), biggerText);
+        //    GUI.Label(new Rect(Screen.width * 0.76f, Screen.height * 0.88f, 60.0f, 80.0f), "" + (CurrentGear + 1), biggerText);
+        //    if (!ESP)
+        //    {
+        //        GUI.color = UnityEngine.Color.grey;
+        //        GUI.Label(new Rect(Screen.width * 0.885f, Screen.height * 0.86f, 60.0f, 40.0f), "ESP", middleText);
+        //    }
+        //    else
+        //    {
+        //        GUI.color = UnityEngine.Color.green;
+        //        GUI.Label(new Rect(Screen.width * 0.885f, Screen.height * 0.86f, 60.0f, 40.0f), "ESP", middleText);
+        //    }
+        //    if (!isReverseOn)
+        //    {
+        //        GUI.color = UnityEngine.Color.grey;
+        //        GUI.Label(new Rect(Screen.width * 0.885f, Screen.height * 0.96f, 60.0f, 40.0f), "REAR", smallerText);
+        //    }
+        //    else
+        //    {
+        //        GUI.color = UnityEngine.Color.red;
+        //        GUI.Label(new Rect(Screen.width * 0.885f, Screen.height * 0.96f, 60.0f, 40.0f), "REAR", smallerText);
+        //    }
 
-        // user info help lines
-        GUI.color = UnityEngine.Color.white;
-        GUI.Box(new Rect(10.0f, 10.0f, 180.0f, 20.0f), "A,W,S,D - main control", smallerText);
-        GUI.Box(new Rect(10.0f, 25.0f, 220.0f, 20.0f), "2 - more power to accelerate", smallerText);
-        GUI.Box(new Rect(10.0f, 40.0f, 120.0f, 20.0f), "X - rear brake", smallerText);
-        GUI.Box(new Rect(10.0f, 55.0f, 320.0f, 20.0f), "Q,E,F,V - shift center of mass of biker", smallerText);
-        GUI.Box(new Rect(10.0f, 70.0f, 320.0f, 20.0f), "R - restart / RightShift+R - full restart", smallerText);
-        GUI.Box(new Rect(10.0f, 85.0f, 180.0f, 20.0f), "RMB - rotate camera around", smallerText);
-        GUI.Box(new Rect(10.0f, 100.0f, 120.0f, 20.0f), "Z - turn on/off ESP", smallerText);
-        GUI.Box(new Rect(10.0f, 115.0f, 320.0f, 20.0f), "C - toggle reverse", smallerText);
-        GUI.Box(new Rect(10.0f, 130.0f, 320.0f, 20.0f), "Esc - return to main menu", smallerText);
-        GUI.color = UnityEngine.Color.black;
+        //    // user info help lines
+        //    GUI.color = UnityEngine.Color.white;
+        //    GUI.Box(new Rect(10.0f, 10.0f, 180.0f, 20.0f), "A,W,S,D - main control", smallerText);
+        //    GUI.Box(new Rect(10.0f, 25.0f, 220.0f, 20.0f), "2 - more power to accelerate", smallerText);
+        //    GUI.Box(new Rect(10.0f, 40.0f, 120.0f, 20.0f), "X - rear brake", smallerText);
+        //    GUI.Box(new Rect(10.0f, 55.0f, 320.0f, 20.0f), "Q,E,F,V - shift center of mass of biker", smallerText);
+        //    GUI.Box(new Rect(10.0f, 70.0f, 320.0f, 20.0f), "R - restart / RightShift+R - full restart", smallerText);
+        //    GUI.Box(new Rect(10.0f, 85.0f, 180.0f, 20.0f), "RMB - rotate camera around", smallerText);
+        //    GUI.Box(new Rect(10.0f, 100.0f, 120.0f, 20.0f), "Z - turn on/off ESP", smallerText);
+        //    GUI.Box(new Rect(10.0f, 115.0f, 320.0f, 20.0f), "C - toggle reverse", smallerText);
+        //    GUI.Box(new Rect(10.0f, 130.0f, 320.0f, 20.0f), "Esc - return to main menu", smallerText);
+        //    GUI.color = UnityEngine.Color.black;
 
 
     }
