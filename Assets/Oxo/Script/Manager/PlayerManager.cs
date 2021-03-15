@@ -12,8 +12,8 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject mudParticle;
     public ParticleSystem mud;
-
-    bool isMouseDown;
+    public float speed;
+    public bool isMouseDown;
 
     float minAngle = -20f;
     float angle;
